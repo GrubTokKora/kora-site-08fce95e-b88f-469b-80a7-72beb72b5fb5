@@ -1,32 +1,44 @@
 @import "tailwindcss";
 @source "../**/*.html";
-@source "../assets/**/*.js";
+@source "../js/**/*.js";
 
 /* Theme tokens for the live brand system.
-   Homepage + subpage styles live in assets/site.css — this file keeps
-   Tailwind utilities + shared tokens for any compiled build path. */
+   The hand-authored homepage stylesheet lives in assets/site.css — this file
+   carries the canonical brand tokens for any compiled Tailwind build path. */
 
 @theme {
-  --color-primary: #1c3d5a;
-  --color-secondary: #edf2f7;
-  --color-accent: #d4912a;
+  --color-primary: #e68a00;
+  --color-secondary: #f5f5f5;
+  --color-accent: #ffb700;
 
-  --font-heading: "Sora", system-ui, sans-serif;
-  --font-body: "Manrope", system-ui, sans-serif;
+  --color-primary-dark: #c46f00;
+  --color-ink: #23282f;
+  --color-ink-deep: #16191e;
+  --color-body: #4a5058;
+  --color-line: #e4e6e9;
 
-  --text-display: 3.5rem;
-  --text-display-mobile: 2.25rem;
-  --text-h2: 2.25rem;
-  --text-h3: 1.5rem;
+  --font-heading: "Arvo", "Rockwell", Georgia, serif;
+  --font-body: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+
+  --text-display: 4.3rem;
+  --text-display-mobile: 2.3rem;
+  --text-h2: 2rem;
+  --text-h3: 1.28rem;
   --text-body: 1.0625rem;
   --text-small: 0.875rem;
-  --text-eyebrow: 0.75rem;
-  --text-caption: 0.875rem;
+  --text-eyebrow: 0.72rem;
+  --text-caption: 0.84rem;
 
-  --spacing-section: 5rem;
-  --spacing-section-mobile: 3rem;
-  --radius-btn: 999px;
-  --shadow-header: 0 8px 30px rgba(28, 61, 90, 0.08);
+  --tracking-eyebrow: 0.28em;
+  --tracking-section: 0.14em;
+
+  --spacing-section: 7rem;
+  --spacing-section-mobile: 4rem;
+  --radius-btn: 4px;
+  --radius-card: 4px;
+  --shadow-card: 0 2px 8px rgba(35, 40, 47, 0.08);
+  --shadow-card-hover: 0 20px 48px rgba(35, 40, 47, 0.16);
+  --shadow-header: 0 2px 20px rgba(35, 40, 47, 0.10);
 }
 
 @layer base {
@@ -34,7 +46,7 @@
     font-family: var(--font-body);
     font-size: var(--text-body);
     line-height: 1.7;
-    color: #1a2a36;
+    color: var(--color-body);
     background-color: #ffffff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -42,7 +54,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    line-height: 1.2;
+    color: var(--color-ink);
+    line-height: 1.22;
   }
 
   *, *::before, *::after {
@@ -53,19 +66,19 @@
 @layer components {
   .eyebrow {
     font-family: var(--font-heading);
-    font-weight: 600;
+    font-weight: 700;
     font-size: var(--text-eyebrow);
-    color: var(--color-accent);
-    letter-spacing: 0.12em;
+    color: var(--color-primary);
+    letter-spacing: var(--tracking-eyebrow);
     text-transform: uppercase;
     display: block;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
+    transform: translateY(26px);
+    transition: opacity 0.75s cubic-bezier(.22,.7,.25,1), transform 0.75s cubic-bezier(.22,.7,.25,1);
   }
 
   .reveal.visible {
@@ -73,12 +86,12 @@
     transform: translateY(0);
   }
 
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
-  .reveal-delay-6 { transition-delay: 0.6s; }
+  .reveal-delay-1 { transition-delay: 0.09s; }
+  .reveal-delay-2 { transition-delay: 0.18s; }
+  .reveal-delay-3 { transition-delay: 0.27s; }
+  .reveal-delay-4 { transition-delay: 0.36s; }
+  .reveal-delay-5 { transition-delay: 0.45s; }
+  .reveal-delay-6 { transition-delay: 0.54s; }
 }
 
 @layer utilities {
