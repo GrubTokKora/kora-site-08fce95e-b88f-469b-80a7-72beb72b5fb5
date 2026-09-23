@@ -84,10 +84,12 @@ composition:
 shell:
   topbar: >
     #16191e, 40px, MOBILE ONLY — hidden from 981px up, where the header CTA and footer already
-    carry the phone and hours. Left: phone + hours with amber icons. Right: service-area line
-    and an amber gradient "CT Licensed & Insured" chip; that group hides ≤860px, and the hours
-    drop ≤350px so the phone keeps one line. The height stays fixed at 40px because the mobile
-    hero's height calculation subtracts it.
+    carry the phone and hours. Carries exactly two items, centred: phone and opening hours,
+    each with an amber icon. A service-area line and a "CT Licensed & Insured" chip lived here
+    too and were removed — they wrapped the bar onto two lines between 861 and 980px, and both
+    facts are already stated in the about section, the service-area band and the footer.
+    Below 350px the hours drop so the phone still holds one line. The height stays fixed at
+    40px because the mobile hero's height calculation subtracts it.
   header: >
     Solid white, sticky, 88px → 72px on scroll with a soft shadow at >12px.
     Left: amber gradient rounded-square mark (house/frame glyph) + "Jacob Paul" /

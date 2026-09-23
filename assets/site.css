@@ -264,7 +264,7 @@ button { font: inherit; cursor: pointer; }
 .topbar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
   width: 100%;
 }
@@ -276,14 +276,6 @@ button { font: inherit; cursor: pointer; }
 }
 .topbar__item svg { width: 14px; height: 14px; flex: none; color: var(--amber-lt); }
 a.topbar__item:hover { color: #fff; }
-.topbar__badge {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-family: var(--font-head); font-weight: 700;
-  font-size: .64rem; letter-spacing: .16em; text-transform: uppercase;
-  color: var(--ink-deep); background: var(--amber-grad);
-  padding: 5px 12px; border-radius: 2px;
-}
-
 /* ---------- 6. Header ---------------------------------------------------- */
 .site-header {
   position: sticky;
@@ -1271,7 +1263,6 @@ body.is-closed .status-pill--closed { display: inline-flex; }
 }
 
 @media (max-width: 860px) {
-  .topbar__group--secondary { display: none; }
   .stats { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
   .stat:nth-child(odd) + .stat::before { display: block; }
   .stat:nth-child(3)::before { display: none; }
@@ -1296,7 +1287,6 @@ body.is-closed .status-pill--closed { display: inline-flex; }
   /* No arrows at this width, so the dots take over — centered, with swipe alongside. */
   .hero__dots { display: flex; }
   /* Height stays fixed — the mobile hero's height calc depends on it. */
-  .topbar__inner { justify-content: center; }
   .topbar__group { flex-wrap: nowrap; justify-content: center; gap: 16px; }
   .topbar__item { font-size: .78rem; }
   /* arrows would sit on top of the hero CTAs — swipe + dots take over */
@@ -1347,7 +1337,6 @@ body.is-closed .status-pill--closed { display: inline-flex; }
 }
 
 @media (max-width: 460px) {
-  .topbar__badge { display: none; }
   .stats { grid-template-columns: 1fr; }
   .stat + .stat::before { display: none !important; }
   .stat + .stat { border-top: 1px solid var(--line); padding-top: 22px; }
