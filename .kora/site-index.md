@@ -20,7 +20,7 @@ sections:
 - `#cta` — mid-page call-to-action band
 - `#about` — about split with offset image frame
 - `#process` — four-step remodel process timeline (consultation, selections, demo & build, walkthrough)
-- `#gallery` — eight-tile kitchen & bath mosaic with hover captions
+- `#gallery` — eight-tile kitchen & bath mosaic with accessible lightbox modal and hover captions
 - `#reviews` — testimonial carousel on a full-bleed kitchen photo ground
 - `#areas` — service-area chips
 - `#faq` — accordion FAQs

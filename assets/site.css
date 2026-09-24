@@ -828,6 +828,13 @@ body.menu-open .drawer__panel { transform: translateX(0); }
   border-radius: var(--radius);
   background: var(--tint);
   display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
 }
 .shot--tall { grid-row: span 2; }
 .shot--wide { grid-column: span 2; }
@@ -839,18 +846,119 @@ body.menu-open .drawer__panel { transform: translateX(0); }
   opacity: 0;
   transition: opacity .4s var(--ease);
 }
-.shot:hover img { transform: scale(1.08); }
-.shot:hover::after { opacity: 1; }
+.shot:hover img,
+.shot:focus-visible img { transform: scale(1.08); }
+.shot:hover::after,
+.shot:focus-visible::after { opacity: 1; }
 .shot__cap {
   position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 18px;
   color: #fff;
   opacity: 0; transform: translateY(14px);
   transition: opacity .4s var(--ease), transform .4s var(--ease);
 }
-.shot:hover .shot__cap { opacity: 1; transform: translateY(0); }
+.shot:hover .shot__cap,
+.shot:focus-visible .shot__cap { opacity: 1; transform: translateY(0); }
 .shot__cap { display: flex; flex-direction: column; }
 .shot__cap-title { font-family: var(--font-head); font-weight: 700; font-size: 1rem; }
 .shot__cap-sub { font-size: .82rem; color: var(--amber-lt); letter-spacing: .1em; text-transform: uppercase; margin-top: 5px; }
+
+/* ---------- 14b. Gallery lightbox modal ---------------------------------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 250;
+  display: flex; align-items: center; justify-content: center;
+  padding: clamp(16px, 3vw, 40px);
+  opacity: 0; visibility: hidden;
+  transition: opacity .3s var(--ease), visibility .3s var(--ease);
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+.lightbox__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(18, 20, 24, .88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+}
+.lightbox__content {
+  position: relative; z-index: 2;
+  max-width: min(1080px, 94vw);
+  max-height: 90vh;
+  display: flex; flex-direction: column; align-items: center;
+}
+.lightbox__figure {
+  margin: 0;
+  display: flex; flex-direction: column; align-items: center;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, .55);
+  background: var(--ink-deep);
+}
+.lightbox__img {
+  max-width: 100%;
+  max-height: clamp(340px, 72vh, 760px);
+  object-fit: contain;
+  display: block;
+}
+.lightbox__caption {
+  width: 100%;
+  padding: 14px 22px;
+  background: rgba(22, 25, 30, .96);
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+}
+.lightbox__title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+}
+.lightbox__sub {
+  font-size: .84rem;
+  color: var(--amber-lt);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.lightbox__close {
+  position: absolute; top: -18px; right: -18px; z-index: 6;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--amber-grad);
+  border: 2px solid #fff;
+  color: #fff;
+  display: grid; place-items: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .35);
+  transition: transform .25s var(--ease), background .25s var(--ease);
+}
+.lightbox__close:hover {
+  transform: scale(1.1);
+  background: var(--amber-grad-r);
+}
+.lightbox__close svg { width: 20px; height: 20px; }
+.lightbox__nav {
+  position: absolute; top: 50%; z-index: 5;
+  transform: translateY(-50%);
+  width: 50px; height: 50px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255, 255, 255, .34);
+  border-radius: 50%;
+  background: rgba(22, 25, 30, .7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  transition: background .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+}
+.lightbox__nav:hover {
+  background: var(--amber);
+  border-color: var(--amber);
+  transform: translateY(-50%) scale(1.08);
+}
+.lightbox__nav svg { width: 22px; height: 22px; }
+.lightbox__nav--prev { left: -68px; }
+.lightbox__nav--next { right: -68px; }
+
+@media (max-width: 860px) {
+  .lightbox__nav--prev { left: 8px; }
+  .lightbox__nav--next { right: 8px; }
+  .lightbox__close { top: -14px; right: 4px; width: 40px; height: 40px; }
+}
 
 /* ---------- 15. Testimonials -------------------------------------------- */
 .quotes {
