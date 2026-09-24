@@ -2,8 +2,8 @@
 
 > Licensed kitchen and bath remodeling contractor in Danbury, Connecticut, serving greater
 > Fairfield County. Kitchen remodeling, bathroom remodeling, custom cabinetry and countertops,
-> tile and stone, trim and finish carpentry, and fixture installation. Family-owned, 15+ years,
-> free estimates.
+> tile and stone, trim and finish carpentry, and fixture installation — plus decks and custom
+> closet and storage systems built by the same crew. Family-owned, 15+ years, free estimates.
 
 ## Contact
 - Address: 87 Mill Plain Rd, Danbury, CT 06811, United States
@@ -19,6 +19,8 @@
 - Tile, Stone & Backsplashes — shower pans and waterproofing, backsplashes and feature walls, large-format, mosaic and heated floors
 - Trim, Millwork & Finish Carpentry — crown, base and casing, built-ins, benches and open shelving, door and window trim-out
 - Plumbing, Lighting & Fixtures — supply and waste relocation, under-cabinet and recessed lighting, faucets, sinks and vent fans
+- Decks & Outdoor Living — hardwood and composite decking, cable, timber and composite railings, stairs, landings and walkways
+- Custom Closets & Storage — walk-in and reach-in closet systems, built-in wardrobes and drawer banks, media walls and storage joinery
 
 ## Typical timelines
 Bathrooms run 3–5 weeks and kitchens 6–10 weeks, demolition to punch list. Custom cabinetry and
@@ -30,5 +32,9 @@ Danbury, Bethel, New Fairfield, Brookfield, Newtown, Ridgefield, and greater Fai
 ## Reputation
 4.8 out of 5 from 67 Google reviews.
 
+## Photography
+Every photograph on the site is of this company's own completed work, including in-progress
+job-site shots labelled as such. None of it is stock.
+
 ## Pages
-- [Home](index.html): hero, welcome, services, about, process, gallery, reviews, service area, FAQ, contact and quote form
+- [Home](index.html): hero, welcome, services, about, process, gallery (45 projects behind a View All toggle), reviews, service area, FAQ, contact and quote form

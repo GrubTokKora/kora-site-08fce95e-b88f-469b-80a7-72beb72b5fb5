@@ -154,6 +154,31 @@
     });
   }
 
+  /* ---- gallery: progressive reveal -------------------------------------- */
+  function initGallery() {
+    var grid = $('#galleryGrid');
+    var btn = $('#galleryMore');
+    if (!grid || !btn) return;
+    var extra = $$('.shot[data-extra]', grid).length;
+    if (!extra) { btn.hidden = true; return; }
+
+    function label() {
+      var collapsed = grid.classList.contains('is-collapsed');
+      btn.textContent = collapsed ? 'View All Projects' : 'Show Fewer';
+      btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    }
+    label();
+
+    btn.addEventListener('click', function () {
+      var nowCollapsed = grid.classList.toggle('is-collapsed');
+      label();
+      // collapsing can drop the page out from under the reader — put them back at the grid
+      if (nowCollapsed) {
+        grid.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      }
+    });
+  }
+
   /* ---- scroll reveal --------------------------------------------------- */
   function initReveal() {
     var els = $$('[data-reveal]');
@@ -340,6 +365,7 @@
     initHero();
     initQuotes();
     initFaq();
+    initGallery();
     initReveal();
     initCounters();
     initHours();

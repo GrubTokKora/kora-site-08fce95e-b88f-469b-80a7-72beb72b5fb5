@@ -5,7 +5,8 @@ address — and body copy are deliberately not recorded here; read the page itse
 Design system: industrial-craft (stylesheet `assets/site.css`; `assets/styles.css` imports it;
 behaviour in `js/site.js`). Redesigned against the client-supplied reference
 newtownkitchenbath.com — Arvo slab display, Source Sans 3 body, amber gradient CTAs.
-Positioning: kitchen & bath remodeling specialist (not general contracting).
+Positioning: kitchen & bath remodeling specialist, with decks and custom storage as additional services.
+All photography is owner-supplied (webp on the Kora blob); see `.kora/image-manifest.json`.
 
 ## index.html → /
 title: Jacob Paul Construction – Licensed General Contractor in Danbury, CT
@@ -16,11 +17,11 @@ sections:
 - `#drawer` — right-side mobile drawer
 - `#hero` — full-bleed three-slide kitchen/bath hero carousel with trust row
 - `#welcome` — welcome card and four animated stat counters
-- `#services` — six kitchen & bath service cards with image zoom and fill-on-hover buttons
+- `#services` — eight service cards (kitchen & bath led, plus decks and custom storage), square media, image zoom and fill-on-hover buttons
 - `#cta` — mid-page call-to-action band
 - `#about` — about split with offset image frame and licence card
 - `#process` — four-step remodel process timeline (consultation, selections, demo & build, walkthrough)
-- `#gallery` — eight-tile kitchen & bath mosaic with hover captions
+- `#gallery` — masonry gallery of 45 owner photos, 8 visible with a View All toggle; captions describe the work, not a location
 - `#reviews` — testimonial carousel on a full-bleed kitchen photo ground
 - `#areas` — service-area chips
 - `#faq` — accordion FAQs
@@ -36,6 +37,7 @@ also: Live styles from `assets/site.css` only.
 - `assets/styles.css` — imports `site.css` for link compatibility
 - `src/input.css` — Tailwind source; theme tokens match the live brand
 - `DESIGN.md` — [content] design decision record
+- `.kora/image-manifest.json` — filename -> hosted URL, dimensions and orientation for all 45 photos
 - `llms.txt` / `robots.txt` / `sitemap.xml` — discovery and crawl files
 
 ## shared

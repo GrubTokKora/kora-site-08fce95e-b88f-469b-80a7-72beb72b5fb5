@@ -72,7 +72,14 @@ palette:
 composition:
   whitespace: generous (--sec-pad clamp 64–112px)
   container: 1220px, gutter clamp(18px, 4vw, 34px)
-  photography: full-bleed kitchen/bath hero slider + 4-col finished-room gallery mosaic
+  photography: >
+    ALL owner-supplied — 45 photos of this company's own work, no stock. 38 of the 45 arrived as
+    iPhone portraits with EXIF orientation 6; the rotation is baked into the pixels at convert
+    time because WebP orientation handling is unreliable. That portrait majority drove three
+    layout decisions: service card media is square (a 4:3 slot would crop a portrait hard), the
+    About frame stays portrait, and Recent Work is masonry rather than a fixed grid so every
+    photo keeps its own aspect ratio. The hero is the one landscape-hungry slot, so its three
+    slides are chosen for compositions that survive a 1.74 crop.
   card_usage: heavy (services, gallery, FAQ, form, hours) — matches the reference
   mobile: >
     Topbar collapses to phone + hours only, then centers. Header drops the nav and quote
@@ -142,7 +149,8 @@ sections:
       deep shadow, 1.09 image zoom, amber top rule scales in, title goes amber, button fills.
       Order is deliberate: Kitchen and Bathroom lead, then the trades a kitchen/bath job
       actually needs — cabinetry & countertops, tile & stone, trim & finish carpentry,
-      plumbing/lighting/fixtures.
+      plumbing/lighting/fixtures — then Decks & Outdoor Living and Custom Closets & Storage,
+      which the same crew builds. Eight cards lay out 4x2 on desktop.
 
   - id: cta
     layout: centered band
@@ -168,10 +176,11 @@ sections:
   - id: gallery
     layout: 4-col mosaic
     spec: >
-      Tint band. Eight tiles on 210px rows with two `--tall` and two `--wide` spans — the
-      span pattern fills the 4-column grid with no holes. Every tile is a finished kitchen,
-      bath or powder room. Hover: 1.08 zoom, dark bottom scrim fades in, caption (room type
-      + amber town label) slides up.
+      Tint band. CSS masonry columns (4 / 3 / 2 / 1) so nothing is cropped — the set mixes
+      portrait and landscape. 45 tiles: 8 visible, the rest behind a "View All Projects"
+      toggle that also collapses back. In-progress job-site shots carry an amber "In progress"
+      tag. Captions name the work and its category ("Freestanding tub & arched window" /
+      "Bathroom remodel") — deliberately NOT a town, since the photos are not tied to one.
 
   - id: reviews
     layout: photo-ground carousel
