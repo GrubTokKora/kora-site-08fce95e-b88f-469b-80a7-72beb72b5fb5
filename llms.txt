@@ -1,16 +1,17 @@
 # Jacob Paul Construction
 
-> Licensed kitchen and bath remodeling contractor in Danbury, Connecticut, serving greater
-> Fairfield County. Kitchen remodeling, bathroom remodeling, custom cabinetry and countertops,
-> tile and stone, trim and finish carpentry, and fixture installation — plus decks and custom
-> closet and storage systems built by the same crew. Family-owned, 15+ years, free estimates.
+> Licensed kitchen and bath remodeling contractor based in Newtown, Connecticut, serving
+> Danbury and greater Fairfield County. Kitchen remodeling, bathroom remodeling, custom
+> cabinetry and countertops, tile and stone, trim and finish carpentry, and fixture
+> installation — plus decks and custom closet and storage systems built by the same crew.
+> Family-owned, 15+ years, free estimates.
 
 ## Contact
-- Address: 87 Mill Plain Rd, Danbury, CT 06811, United States
-- Phone: (203) 744-5520
-- Email: info@jacobpaulconstruction.com
+- Address: 80 Main St, Newtown, CT, United States
+- Phone: (914) 582-4410
+- Email: jacobpaul82@yahoo.com
 - Hours: Mon–Fri 7:00 AM – 5:00 PM · Sat 8:00 AM – 1:00 PM · Sun closed
-- Licence: CT HIC #0123456 — licensed and insured
+- Licensed and insured
 
 ## Services
 - Kitchen Remodeling — layout and work-triangle redesign, full gut renovations, islands, pantries and appliance fit
@@ -27,7 +28,7 @@ Bathrooms run 3–5 weeks and kitchens 6–10 weeks, demolition to punch list. C
 stone carry lead times and are ordered early; a dated schedule comes with every estimate.
 
 ## Service area
-Danbury, Bethel, New Fairfield, Brookfield, Newtown, Ridgefield, and greater Fairfield County, CT.
+Newtown, Danbury, Bethel, New Fairfield, Brookfield, Ridgefield, and greater Fairfield County, CT.
 
 ## Reputation
 4.8 out of 5 from 67 Google reviews.
@@ -37,4 +38,4 @@ Every photograph on the site is of this company's own completed work, including 
 job-site shots labelled as such. None of it is stock.
 
 ## Pages
-- [Home](index.html): hero, welcome, services, about, process, gallery (45 projects behind a View All toggle), reviews, service area, FAQ, contact and quote form
+- [Home](index.html): hero, welcome, services, about, process, gallery (45 projects behind a View All toggle, each opening in a lightbox), reviews, service area, FAQ, contact and quote form

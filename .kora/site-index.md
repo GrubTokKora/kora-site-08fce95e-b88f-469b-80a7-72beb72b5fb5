@@ -12,16 +12,16 @@ All photography is owner-supplied (webp on the Kora blob); see `.kora/image-mani
 title: Jacob Paul Construction – Licensed General Contractor in Danbury, CT
 purpose: Home page — kitchen & bath remodeling introduction, services, process, gallery, reviews, FAQ, hours/location, and quote request.
 sections:
-- `.topbar` — dark utility strip: phone, hours, service area, licence chip
+- `.topbar` — dark utility strip: phone, hours, service area
 - `#siteHeader` — solid white sticky header, shrinks on scroll; nav, social icon squares, quote CTA
 - `#drawer` — right-side mobile drawer
 - `#hero` — full-bleed three-slide kitchen/bath hero carousel with trust row
 - `#welcome` — welcome card and four animated stat counters
 - `#services` — eight service cards (kitchen & bath led, plus decks and custom storage), square media, image zoom and fill-on-hover buttons
 - `#cta` — mid-page call-to-action band
-- `#about` — about split with offset image frame and licence card
+- `#about` — about split with offset image frame (licence badge removed)
 - `#process` — four-step remodel process timeline (consultation, selections, demo & build, walkthrough)
-- `#gallery` — masonry gallery of 45 owner photos, 8 visible with a View All toggle; captions describe the work, not a location
+- `#gallery` — masonry gallery of 45 owner photos, 8 visible with a View All toggle; each tile is a button opening an accessible lightbox modal; captions describe the work, not a location
 - `#reviews` — testimonial carousel on a full-bleed kitchen photo ground
 - `#areas` — service-area chips
 - `#faq` — accordion FAQs

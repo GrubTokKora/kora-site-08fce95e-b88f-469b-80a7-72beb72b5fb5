@@ -181,6 +181,9 @@ sections:
       toggle that also collapses back. In-progress job-site shots carry an amber "In progress"
       tag. Captions name the work and its category ("Freestanding tub & arched window" /
       "Bathroom remodel") — deliberately NOT a town, since the photos are not tied to one.
+      Each tile is a <button> that opens an accessible lightbox (modal, prev/next, Escape,
+      focus returned to the trigger). The lightbox reuses the grid's 2000px webp, which is
+      already cached, so it opens instantly.
 
   - id: reviews
     layout: photo-ground carousel
@@ -231,6 +234,7 @@ avoid:
   - inset or carded hero images — the hero must stay full-bleed
   - stats strips or promo chips overlaid on hero media (the trust row is type only)
   - inventing contact details beyond the known address, phone, and email
+  - stating a licence number anywhere — it was removed site-wide on request
   - construction cliches ("state-of-the-art", "cutting-edge", "turnkey solutions")
   - generic construction-site stock (cranes, rebar, hi-vis crews) — every image is a
     finished kitchen, bath, or remodel detail

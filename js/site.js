@@ -280,6 +280,137 @@
     targets.forEach(function (t) { io.observe(t); });
   }
 
+  /* ---- gallery lightbox ------------------------------------------------ */
+  function initLightbox() {
+    var modal = $('#galleryLightbox');
+    if (!modal) return;
+
+    var triggers = $$('.shot');
+    if (!triggers.length) return;
+
+    var img = $('#lightboxImg');
+    var title = $('#lightboxTitle');
+    var sub = $('#lightboxSub');
+    var prevBtn = $('#lightboxPrev');
+    var nextBtn = $('#lightboxNext');
+    var closeButtons = $$('[data-lightbox-close]', modal);
+    var currentIndex = 0;
+    var lastTrigger = null;
+
+    function getItemsData() {
+      return triggers.map(function (btn) {
+        var elImg = $('img', btn);
+        var elTitle = $('.shot__cap-title', btn);
+        var elSub = $('.shot__cap-sub', btn);
+        // The grid already serves a 2000px webp and it is in cache by the time the
+        // lightbox opens, so reuse it rather than refetching a larger copy.
+        var rawSrc = elImg ? elImg.getAttribute('src') : '';
+        return {
+          src: rawSrc,
+          alt: elImg ? elImg.getAttribute('alt') || '' : '',
+          title: elTitle ? elTitle.textContent.trim() : '',
+          sub: elSub ? elSub.textContent.trim() : ''
+        };
+      });
+    }
+
+    var items = getItemsData();
+
+    function showItem(index) {
+      currentIndex = (index + items.length) % items.length;
+      var item = items[currentIndex];
+      if (!item) return;
+
+      if (img) {
+        img.src = item.src;
+        img.alt = item.alt;
+      }
+      if (title) title.textContent = item.title;
+      if (sub) sub.textContent = item.sub;
+    }
+
+    function open(index, triggerEl) {
+      lastTrigger = triggerEl || null;
+      showItem(index);
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      var closeBtn = $('.lightbox__close', modal);
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function close() {
+      if (!modal.classList.contains('is-open')) return;
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastTrigger && typeof lastTrigger.focus === 'function') {
+        lastTrigger.focus();
+      }
+    }
+
+    triggers.forEach(function (btn, idx) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        open(idx, btn);
+      });
+    });
+
+    closeButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        close();
+      });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        showItem(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        showItem(currentIndex + 1);
+      });
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (!modal.classList.contains('is-open')) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        close();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        showItem(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        showItem(currentIndex + 1);
+      } else if (e.key === 'Tab') {
+        var focusables = $$('button:not([disabled]), [tabindex]:not([tabindex="-1"])', modal);
+        if (!focusables.length) return;
+        var first = focusables[0];
+        var last = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
+    });
+  }
+
   /* ---- back to top ------------------------------------------------------ */
   function initToTop() {
     var btn = $('#toTop');
@@ -371,6 +502,7 @@
     initHours();
     initSpy();
     initToTop();
+    initLightbox();
     initForm();
   }
 
