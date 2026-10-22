@@ -17,8 +17,9 @@
   --color-body: #4a5058;
   --color-line: #e4e6e9;
 
-  --font-heading: "Arvo", "Rockwell", Georgia, serif;
-  --font-body: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+  --font-heading: var(--kora-font-heading, "Arvo"), "Rockwell", Georgia, serif;
+  --font-body: var(--kora-font-body, "Source Sans 3"), "Source Sans Pro", system-ui, sans-serif;
+  --font-accent: var(--kora-font-accent, var(--font-heading)), var(--font-heading);
 
   --text-display: 4.3rem;
   --text-display-mobile: 2.3rem;

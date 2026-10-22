@@ -31,8 +31,8 @@
   --stop:        #c0392b;
   --stop-bg:     #fdecea;
 
-  --font-head:   "Arvo", "Rockwell", Georgia, serif;
-  --font-body:   "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-head:   var(--kora-font-heading, "Arvo"), "Rockwell", Georgia, serif;
+  --font-body:   var(--kora-font-body, "Source Sans 3"), "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --shadow-sm:   0 2px 8px rgba(35, 40, 47, .08);
   --shadow-md:   0 10px 28px rgba(35, 40, 47, .10);
